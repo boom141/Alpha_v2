@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %} Alpha | Fair Division Site{% endblock %}
+{% block lib %}<link rel="stylesheet" href="{{url_for('static', filename='libraries/Skeleton-2.0.4/skeleton.css')}}">{% endblock %}
+
+
+{% block content %}
+
+<nav class="nav-bar">
+    <h4 class="base-color lg-size h-custom-margin"><span class="light-color">AL-</span>PHA</h4>
+    <div class="nav-options">
+        <a href="#" class="base-color nav-links links">About</a>
+        <a href="#" class="base-color nav-links links">Documentation</a>
+        <div class="soc-meds">
+            <a href="#"><img src="https://img.icons8.com/ios/30/F9A826/discord-logo--v1.png"/></a>
+            <a href="#"><img src="https://img.icons8.com/material-outlined/30/F9A826/github.png"/></a>
+        </div>
+    </div>
+</nav>
+<div class="center-content">
+    <div class="page-transition">
+        <div class="transition-container">
+            <img id="cancel-btn" style="height: 7rem; cursor: pointer;"src="https://img.icons8.com/ios-filled/100/F9A826/cancel.png"/>
+            <form method="post" class="page-form ">
+                <h2 class="form-title base-color"><span class="light-color" id="page-mode">New</span> Session</h2>
+                <input type="text" required="True" name="player-name" placeholder="Player Name">
+                <input type="text" required="True" name="room-name" placeholder="Room Name">
+                <button type="submit" name="new-session" class="base-color page-btn">Enter Room</button>
+                <button type="submit" name="join-session" class="base-color page-btn">Enter Room</button>
+            </form>
+            <img class="form-img" src="{{url_for('static', filename='images/form-img1.png')}}" alt="">
+            <img class="form-img" src="{{url_for('static', filename='images/form-img2.png')}}" alt="">
+        </div>
+    </div>
+    <div class="landing-text">
+        <h1 class="base-color slogan">Share Items <br>
+        <span class="light-color slogan" >FAIRLY</span></h1>
+        <div class="light-color page-links" id="new-session">New Session</div>
+        <div class="base-color page-links" id="join-session">Join Session</div>
+    </div>
+    <div class="landing-img">
+        <img src="{{url_for('static', filename='images/landing-logo.png')}}" alt="">
+    </div>
+</div>
+
+<script src="{{url_for('static', filename='javascripts/page_transition.js')}}"></script> 
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %} Lobby | Fair Division Site{% endblock %}
+
+
+{% block content %}
+
+<div class="lobby lobby-content ">
+    <section>
+        <h1 class="base-color" id="room-name"><span class="light-color">Lobby: </span>{{room_name}}</h1>
+        <div class="player-indicator">
+            <div class="player-info">
+                <img class="player-ico" src="{{url_for('static', filename='images/p-inactive.png')}}" alt="">
+                <h2 class="base-color player-username">Player1</h2>
+            </div>
+            <div class="player-info">
+                <img class="player-ico" src="{{url_for('static', filename='images/p-inactive.png')}}" alt="">
+                <h2 class="base-color player-username">Player2</h2>
+            </div>
+        </div>
+        <a href="" class="links base-color">Start Session</a>
+        <a href="" class="links light-color">Leave Room</a>
+    </section>
+    <section>
+        <div class="item item-container ">
+            <h1 class="base-color">Add Items</h1>
+            <div class="item-list "></div>
+            <div class="input-item">
+                <input id="item" type="text" placeholder="Enter Item...">
+                <img onclick="add_item()" src="https://img.icons8.com/small/32/F9A826/filled-sent.png"/>
+            </div>
+        </div>
+        <h2 class="base-color" id="player-count">Session Players: 0 / 2</h2>
+        <div class="code-btn">
+            <img src="https://img.icons8.com/fluency-systems-regular/48/FFFFFF/clone-figure--v3.png"/>
+            <span class="base-color">ROOM CODE</span></div>
+    </section>
+</div>
+
+<script src="{{url_for('static', filename='javascripts/socket_events.js')}}"></script>
+
+{% endblock %}
